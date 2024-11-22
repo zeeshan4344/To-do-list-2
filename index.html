@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do list</title>
+  </head>
+  <body>
+    <input type="text" placeholder="Add task" id="input" />
+    <button id="input1" onclick="todo()">Add button</button>
+    <div id="newd"></div>
+    <script>
+
+
+      function todo() {
+        var task = [];
+        var task2 = document.getElementById("input").value;
+        task.push(task2);
+        let newhtml = "";
+        for (let i = 0; i < task.length; i++) {
+            newhtml += `<p>${task[i]}</p>
+                <button onclick="task.splice(${i},1);">Delete</button>`;
+        document.getElementById("newd").innerHTML = newhtml;
+      }}
+    </script>
+  </body>
+</html>
